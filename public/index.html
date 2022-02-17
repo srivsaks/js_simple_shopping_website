@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,20 +25,65 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Simple Shopping List</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="wrapper">
+      <header>
+        <div id="page-top">
+          <h1 class="title">
+            Shopaholic
+          </h1>
+          <p>My Shopping List</p>
+          <form  id="search-item">
+            <input type="text" placeholder="Search items...">
+            <div id="check">
+              <label for="hide">Hide list</label>
+              <input type="checkbox" id="hide">
+            </div>
+          </form>
+        </div>
+      </header>
+      <form id="add-item" >
+        <input type="text" placeholder="What do you want to buy?">
+        <button>Add Item</button>
+      </form>
+      <div id="grocery-list">
+        <h2 class="title">
+          Items to buy
+        </h2>
+        <ul>
+          <li>
+            <span class="item">
+             Milk
+            </span>
+            <span class="delete">Delete</span>
+          </li>
+          <li>
+            <span class="item">
+             Sugar
+            </span>
+            <span class="delete">Delete</span>
+          </li>
+          <li>
+            <span class="item">
+             Pizza
+            </span>
+            <span class="delete">Delete</span>
+          </li>
+          <li>
+            <span class="item">
+             Sauce
+            </span>
+            <span class="delete">Delete</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+   
   </body>
+  <script src="script.js"></script>
 </html>
