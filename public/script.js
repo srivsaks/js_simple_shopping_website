@@ -29,7 +29,7 @@ function addItem(e) {
     addItemButton.querySelector("input").value = ""
 }
 
-//hide items using checkbox
+//hide and unhide items using checkbox
 let checkboxEle = document.getElementById("hide");
 checkboxEle.addEventListener("change",hideUnhide);
 
@@ -41,4 +41,28 @@ function hideUnhide(e){
     else{
         groceryListUL.style.display="block"
     }
+}
+
+//search for items
+const search=document.forms["search-item"].querySelector("input")
+search.addEventListener("keyup",handleSearch)
+
+
+function handleSearch(e){
+    const searchText=e.target.value.toLowerCase();
+    
+    let groceryItem=document.querySelector("#grocery-list ul");
+    let groceryItemLists=groceryItem.getElementsByTagName("li");
+
+    let groceryArray=Array.from(groceryItemLists);
+    groceryArray.forEach((item)=>{
+        let groceryName=item.firstElementChild.textContent;
+        let groceryNameLower=groceryName.toLowerCase()
+        if(groceryNameLower.indexOf(searchText)===-1){
+           item.style.display="none"
+        }
+        else{
+            item.style.display="block";
+        }
+    })
 }
